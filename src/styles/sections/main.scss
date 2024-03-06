@@ -1,3 +1,98 @@
+@use '../utils/mixin' as m;
+
 .main {
-  
+    position: relative;
+    padding: 30px 0;
+    height: auto;
+    min-height: 404px;
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+
+        img {
+            object-position: top;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            opacity: 0.7;
+        }
+    }
+
+    &__content {
+        padding-top: 39px;
+    }
+
+    &__descr {
+        display: none;
+    }
+
+    &__bg {
+        img {
+            object-position: bottom;
+        }
+    }
+}
+
+@include m.tablet-s {
+    .main {
+        display: flex;
+        align-items: center;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__bg {
+            img {
+                object-position: center 30%;
+            }
+        }
+    }
+}
+
+@include m.tablet {
+    .main {
+        padding: 30px 0;
+        min-height: 550px;
+
+        &__content {
+            padding-top: 30px;
+        }
+
+        &__descr {
+            display: block;
+            color: var(--accent);
+        }
+
+        &__btn-arrow {
+            margin-top: 24px;
+        }
+    }
+}
+
+@include m.desctop-xl {
+  .main {
+    height: auto;
+    aspect-ratio: 1 / 0.38;
+    display: flex;
+    align-items: center;
+
+    &__bg {
+        img {
+            object-position: center 20%;
+        }
+    }
+  }
 }

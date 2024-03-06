@@ -1,0 +1,39 @@
+@use '../utils/mixin' as m;
+
+.btn-arrow {
+    position: relative;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 700;
+    color: var(--btn);
+    background: transparent;
+    border: unset;
+    padding-right: 51px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 43px;
+        height: 15px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        mask-image: url("/icons/arrow.svg");
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center center;
+        background-color: var(--btn);
+        transition: background-color 0.3s ease;
+    }
+
+    @include m.hover{
+        &:hover {
+            color: var(--btn-hover);
+            &::after {
+                background-color: var(--btn-hover);
+            }
+        }
+    }
+}

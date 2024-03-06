@@ -1,7 +1,9 @@
 @use '/src/styles/utils/reset';
 @use '/src/styles/utils/mixin';
 @use '/src/styles/utils/fonts';
+@use '/src/styles/utils/variables';
 @use '/src/styles/utils/common';
 
+@use '/src/styles/components/btn';
 
 @use '/src/styles/sections/main';

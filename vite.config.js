@@ -2,6 +2,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
+import autoprefixer from 'autoprefixer';
 
 export default defineConfig(() => {
     return {
@@ -32,6 +33,13 @@ export default defineConfig(() => {
                     assetFileNames: `assets/[name].[ext]`
                 }
             },
+        },
+        css: {
+            postcss: {
+                plugins: [
+                    autoprefixer()
+                ]
+            }
         }
     };
 });
